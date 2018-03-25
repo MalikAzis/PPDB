@@ -11,14 +11,29 @@ body{
   text-decoration: underline;
 }
 
+
+
 .link {
   float: right;
   padding-left: 5rem;
 }
 
+
 a{
   color: black;
   font-weight: 700;
+}
+
+.img-center{
+  margin-left: 8em;
+  width: 80%;
+  height: 80%;
+  margin-bottom: 1em;
+
+}
+
+.navbar li a{
+  font-size: 1.3em;
 }
 
 
@@ -32,10 +47,7 @@ a{
 }
 
 .banner{
-  padding-top: 3%;
-  padding-bottom: 2%;
   padding-left: 5%;
-  margin-bottom: 2%;
   background-color: rgb(255, 255, 255);
 }
 

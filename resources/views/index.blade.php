@@ -90,4 +90,10 @@
 </div>
 <hr>
 
+<div class="image-alur">
+  <div class="container">
+    <img class="img-responsive img-center" src="img/alur-ppmb-copy.jpg" alt="">
+  </div>
+</div>
+
 @endsection('content')
