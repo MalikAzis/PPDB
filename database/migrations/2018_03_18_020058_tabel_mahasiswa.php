@@ -16,7 +16,7 @@ class TabelMahasiswa extends Migration
           Schema::create('mahasiswa', function(Blueprint $table)
         {
         $table->increments('id');
-
+        $table->bigInteger('nomor_peserta')->unique();
         $table->string('nama_depan');
         $table->string('nama_belakang');
         $table->string('jk');
@@ -28,7 +28,7 @@ class TabelMahasiswa extends Migration
         $table->string('tempat_lahir');
         $table->date('tanggal_lahir');
         $table->string('email', 150)->unique();
-        $table->integer('telp');
+        $table->bigInteger('telp');
         $table->string('agama');
         $table->string('token');
 

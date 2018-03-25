@@ -21,8 +21,11 @@ class registerController extends Controller
     return view('ppdb');
   }
 
+
+
   public function store(Request $request)
   {
+    $no = '18'.rand(0, 2000);
 
     $this->validate($request,[
       'nama_depan'    => 'required',
@@ -40,6 +43,7 @@ class registerController extends Controller
       'agama'         => 'required',
     ]);
     $user = Mahasiswa::create([
+      'nomor_peserta' => $no.$request->pilihan1,
       'nama_depan'    => $request->nama_depan,
       'nama_belakang' => $request->nama_belakang,
       'jk'            => $request->jk,
@@ -68,7 +72,7 @@ class registerController extends Controller
     ]);
 
     $data = DataSekolah::create([
-
+      'nomor_peserta'     => $no.$request->pilihan1,
       'jenis_sekolah'     => $request->jenis_sekolah,
       'status_sekolah'    => $request->status_sekolah,
       'prov_sekolah'      => $request->prov_sekolah,

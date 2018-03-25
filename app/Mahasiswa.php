@@ -11,6 +11,6 @@ class Mahasiswa extends Model
   protected $guarded = ['id','created_at, updated_at'];
 
   public function studies(){
-    return $this->hasOne('App\Mahasiswa', 'id');
+    return $this->hasOne('App\DataSekolah', 'nomor_peserta');
   }
 }
