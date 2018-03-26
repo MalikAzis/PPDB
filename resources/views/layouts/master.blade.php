@@ -26,7 +26,7 @@
                 <a class="link" href="register">Form Pendaftaran</a>
               </li>
               <li class="nav-item">
-                <a class="link" href="#">Status Pendaftaran</a>
+                <a class="link" href="#">Pengumuman</a>
               </li>
             </ul>
           </nav>

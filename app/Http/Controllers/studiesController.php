@@ -26,7 +26,7 @@ class studiesController extends Controller
       'pilihan2'         => 'required',
     ]);
 
-    $register = DataSekolah::create([
+    $data = DataSekolah::create([
       'jenis_sekolah'     => $request->jenis_sekolah,
       'status_sekolah'    => $request->status_sekolah,
       'prov_sekolah'      => $request->prov_sekolah,

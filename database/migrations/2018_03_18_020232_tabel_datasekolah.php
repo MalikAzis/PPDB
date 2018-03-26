@@ -16,7 +16,6 @@ class TabelDatasekolah extends Migration
         Schema::create('datasekolah', function(Blueprint $table)
         {
         $table->increments('id');
-        $table->bigInteger('nomor_peserta')->unique();
         $table->string('jenis_sekolah');
         $table->string('status_sekolah');
         $table->string('prov_sekolah');
@@ -25,14 +24,10 @@ class TabelDatasekolah extends Migration
         $table->integer('graduate');
         $table->string('pilihan1');
         $table->string('pilihan2');
-
+        $table->integer('mahasiswa_id')->unsigned();
         $table->timestamps();
 
-        $table->foreign('nomor_peserta')
-              ->references('nomor_peserta')
-              ->on('mahasiswa')
-              ->onUpdate('cascade')
-              ->onDelete('cascade');
+          $table->foreign('mahasiswa_id')->references('id')->on('mahasiswa');
         });
     }
 

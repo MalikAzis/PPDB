@@ -8,8 +8,6 @@ use App\DataSekolah;
 use App\Events\DataCreated;
 use Illuminate\Http\Request;
 
-
-
 class registerController extends Controller
 {
 
@@ -21,6 +19,17 @@ class registerController extends Controller
     return view('ppdb');
   }
 
+  public function data(){
+
+    $data_m = \App\Mahasiswa::with('datasekolah')->get();
+    return $data_m;
+  }
+
+  public function show($nomor_peserta){
+
+    $data_m = \App\Mahasiswa::with('datasekolah')->wherenomor_peserta($nomor_peserta)->first();
+    return (['data'=>$data_m]);
+  }
 
 
   public function store(Request $request)
@@ -71,8 +80,7 @@ class registerController extends Controller
       'pilihan2'         => 'required',
     ]);
 
-    $data = DataSekolah::create([
-      'nomor_peserta'     => $no.$request->pilihan1,
+    $data = $user->datasekolah()->create([
       'jenis_sekolah'     => $request->jenis_sekolah,
       'status_sekolah'    => $request->status_sekolah,
       'prov_sekolah'      => $request->prov_sekolah,

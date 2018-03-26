@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-use App\DataSekolah;
 use Illuminate\Database\Eloquent\Model;
 
 class Mahasiswa extends Model
@@ -10,7 +9,9 @@ class Mahasiswa extends Model
 
   protected $guarded = ['id','created_at, updated_at'];
 
-  public function studies(){
-    return $this->hasOne('App\DataSekolah', 'nomor_peserta');
+  public function datasekolah()
+  {
+    return $this->hasOne('App\DataSekolah');
   }
+
 }
