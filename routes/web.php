@@ -6,3 +6,5 @@ Route::post('/register', 'registerController@store');
 
 Route::get('/status', 'statusController@index');
 Route::post('/status', 'RegisterController@show');
+
+Route::get('/pdf', 'registerController@pdf');

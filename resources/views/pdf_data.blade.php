@@ -5,7 +5,6 @@
     <title></title>
   </head>
   <body>
-    <h1>Pendaftaran Mahasiswa Baru Universitas Kadiri</h1>
-    <a href="{{url('/pdf')}}">Klik untuk aktifkan</a>
+    Hello World
   </body>
 </html>

@@ -7,6 +7,8 @@ use App\Mahasiswa;
 use App\DataSekolah;
 use App\Events\DataCreated;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF;
+use PDF;
 
 class registerController extends Controller
 {
@@ -95,5 +97,10 @@ class registerController extends Controller
 
     return redirect('/');
   }
+
+  public function pdf() {
+    $pdf = PDF::loadView('pdf_data');
+    return $pdf->download('data.pdf');
+}
 
 }
